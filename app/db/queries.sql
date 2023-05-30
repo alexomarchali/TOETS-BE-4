@@ -1,10 +1,10 @@
 SELECT 
-    VI.* 
-   ,VO.*
-   ,TV.* 
-FROM           VoertuigInstructeur AS VI
-INNER JOIN     Voertuig AS VO
-ON             VI.VoertuigId = VO.Id
-INNER JOIN     TypeVoertuig AS TV
-ON             VO.TypeVoertuigId = TV.Id
+    EX.* 
+   ,EP.*
+   ,EN.* 
+FROM           Examen AS EX
+INNER JOIN     ExamenPerExaminator AS EP
+ON             EX.Examen = EP.Id
+INNER JOIN     Examinator AS EN
+ON             EP.ExamenPerExaminator = EN.Id
 WHERE   InstructeurId = 1;
